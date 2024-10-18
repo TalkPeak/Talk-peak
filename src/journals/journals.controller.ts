@@ -25,6 +25,11 @@ export class JournalsController {
     return this.journalsService.findAll(+userId);
   }
 
+  @Get()
+  async find() {
+    return this.journalsService.find();
+  }
+
   @Get(':journalId')
   async findOne(@Param('journalId') journalId: string) {
     return this.journalsService.findOne(+journalId);

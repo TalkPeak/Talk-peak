@@ -21,9 +21,6 @@ export class User {
   @Column()
   password: string;
 
-  @Column('varchar', { unique: true, nullable: false })
-  nickname: string;
-
   @OneToOne(() => Mission, (mission) => mission.user)
   @JoinColumn({ name: 'user_id' })
   mission: Mission;
