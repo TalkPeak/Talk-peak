@@ -1,0 +1,17 @@
+@media screen and (max-width: 845px) {
+    .border_line {
+        width: 392px;
+        border: 1.5px solid #83AC3E;
+        background: #FFF;
+        position: relative;
+        top: 780px;
+    }
+
+    .nav_three_button {
+        display: flex;
+        height: 100vh;
+        align-items: flex-end;
+        justify-content: space-around;
+        padding-bottom: 18px;
+    }
+}
