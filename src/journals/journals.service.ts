@@ -1,26 +1,45 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateJournalDto } from './dto/create-journal.dto';
 import { UpdateJournalDto } from './dto/update-journal.dto';
+import { Journal } from './entities/journal.entity';
 
 @Injectable()
 export class JournalsService {
-  create(createJournalDto: CreateJournalDto) {
-    return 'This action adds a new journal';
+  constructor(
+    @InjectRepository(Journal)
+    private journalsRepository: Repository<Journal>,
+  ) {}
+
+  async create(createJournalDto: CreateJournalDto): Promise<Journal> {
+    const journal = this.journalsRepository.create(createJournalDto);
+    return this.journalsRepository.save(journal);
   }
 
-  findAll() {
-    return `This action returns all journals`;
+  async findAll(userId: number): Promise<Journal[]> {
+    return this.journalsRepository.find({
+      where: { user: { id: userId } }, // userId로 필터링
+    });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} journal`;
+  async findOne(id: number): Promise<Journal | undefined> {
+    return this.journalsRepository.findOneBy({ id });
   }
 
-  update(id: number, updateJournalDto: UpdateJournalDto) {
-    return `This action updates a #${id} journal`;
+  async update(
+    id: number,
+    updateJournalDto: UpdateJournalDto,
+  ): Promise<Journal | undefined> {
+    const journal = await this.journalsRepository.findOneBy({ id });
+    if (!journal) {
+      return undefined;
+    }
+    Object.assign(journal, updateJournalDto);
+    return this.journalsRepository.save(journal);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} journal`;
+  async remove(id: number): Promise<void> {
+    await this.journalsRepository.delete(id);
   }
 }
