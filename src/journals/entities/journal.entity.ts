@@ -19,8 +19,8 @@ export class Journal {
   @JoinColumn({ name: 'user_id' })
   user: User;
 
-  @Column()
-  title: string;
+  // @Column()
+  // title: string;
 
   @Column()
   content: string;

@@ -23,6 +23,10 @@ export class JournalsService {
     });
   }
 
+  async find(): Promise<Journal[]> {
+    return this.journalsRepository.find();
+  }
+
   async findOne(id: number): Promise<Journal | undefined> {
     return this.journalsRepository.findOneBy({ id });
   }
