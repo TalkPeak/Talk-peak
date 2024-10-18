@@ -40,7 +40,7 @@
         height: 35px;
         resize: none;  /* 사용자가 크기를 조절하지 못하게 할 경우 */
         border: none; /* 테두리 제거 */
-        padding: 0; /* 패딩 제거 */
+        padding: 5px;
         margin: 0; /* 마진 제거 */
         outline: none; /* 포커스 시 아웃라인 제거 */
         box-shadow: none; /* 박스 그림자 제거 */
@@ -73,9 +73,8 @@
         margin: 10px 0; /* 메시지 간격 조정 */
     }
 
-    .chat_massage{
-        border: 2px solid #A3CA61;
-        border-radius: 10px;
+    .chat-message.A > p {
+        padding-top: 10px;
     }
 }
 
