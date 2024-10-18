@@ -6,7 +6,6 @@ import { Talk } from './entities/talk.entity';
 
 @Injectable()
 export class TalksService {
-  findAll: any;
   constructor(
     @InjectRepository(Talk)
     private talksRepository: Repository<Talk>,
@@ -18,20 +17,19 @@ export class TalksService {
     return this.talksRepository.save(talk);
   }
 
-  // answer1, 2, 3 조회
-  async findOne(
-    id: number,
-  ): Promise<
-    { answer1: string; answer2: string; answer3: string } | undefined
+  async findAll(): Promise<
+    { answer1: string; answer2: string; answer3: string }[]
   > {
-    const talk = await this.talksRepository.findOneBy({ id });
-    if (!talk) {
-      return undefined;
-    }
-    return {
+    const talks = await this.talksRepository.find();
+    return talks.map((talk) => ({
       answer1: talk.answer1,
       answer2: talk.answer2,
       answer3: talk.answer3,
-    };
+    }));
+  }
+
+  // answer1, 2, 3 조회
+  async findOne(id: number): Promise<Talk | undefined> {
+    return this.talksRepository.findOneBy({ id });
   }
 }

@@ -13,9 +13,6 @@ export class Talk {
   id: number;
 
   @Column()
-  talk_id: number;
-
-  @Column()
   answer1: string;
 
   @Column()
