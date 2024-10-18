@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/font/PretendardVariable.ttf') format('truetype');
+}
+
+@media screen and (max-width: 845px) {
+    nav {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .border_line {
+        width: 392px;
+        border: 1.5px solid #83AC3E;
+        background: #FFF;
+        margin-bottom: 1rem;
+    }
+
+    .nav_three_button {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        padding-bottom: 18px;
+    }
+
+    body {
+        background-color: #FFFFFf;
+        overflow: hidden;
+        height: 844px;
+    }
+
+    .two_button {
+        margin-top: 63px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        /* height: 100px;  */
+    }
+
+    .babsae {
+        margin-bottom: 80px;
+    }
+    
+    .up_button {
+        width: 315px;
+        height: 50px;
+        padding: 0 50px;
+        color: #484848;
+        text-align: center;
+        margin: 5px 0;
+        border-radius: 10px;
+        line-height: 50px; 
+        font-size: 15px;
+        font-family: 'Pretendard';
+        font-weight: 400;
+        letter-spacing: -0.5px;
+    }
+
+    .up_button {
+        background:#C7E488;
+        border: none;
+        outline: none;
+    }
+
+    .balloon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 150px;
+    }
+    
+    img {
+        width: 300px;
+        height: auto;
+    }
+
+    p {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* 가운데 정렬 */
+        color: #484848;
+        text-align: center;
+        font-family: 'Pretendard';
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: -0.5px;
+        white-space: nowrap;
+    }
+
+    .accent {
+        font-weight: 500;
+    }
+
+}
