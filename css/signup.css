@@ -15,16 +15,16 @@
         line-height: 20px;
         letter-spacing: -0.5px;
         margin-top: 40px;
-        margin-bottom: 100px;
+        margin-bottom: 150px;
     }
 
-    .input_idpassword {
+    .input_idpasswordemail {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .input_idpassword > p {
+    .input_idpasswordemail > p {
         color: #2C2C2C;
         font-family: 'Pretendard';
         font-size: 15px;
@@ -42,7 +42,11 @@
         margin-right: 168px !important;
     }
 
-    .input_id, .input_password {
+    .em {
+        margin-right: 177px !important;
+    }
+
+    .input_id, .input_password, .input_email {
         display: flex;
         width: 315px;
         height: 45px;
@@ -52,15 +56,17 @@
         border-radius: 10px;
         border: 1.5px solid #AEAEAE;
         margin-bottom: 30px;
+        font-family: 'Pretendard';
     }
-
+    
     .input_id:focus,
-    .input_password:focus {
+    .input_password:focus,
+    .input_email:focus {
         outline: 1.5px solid #83AC3E !important;
     }
 
     .two_button {
-        margin-top: 330px;
+        margin-top: 160px;
         display: flex;
         flex-direction: column;
         justify-content: center;

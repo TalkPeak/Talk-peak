@@ -30,13 +30,13 @@
     }
 
     .two_button {
-        margin-top: 490px;
+        margin-top: 95px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         position: relative;
-        height: 100px; 
+        /* height: 100px;  */
     }
     
     .up_button {
@@ -52,6 +52,10 @@
         font-family: 'Pretendard';
         font-weight: 400;
         letter-spacing: -0.5px;
+    }
+
+    .babsae {
+        margin-bottom: 80px;
     }
 
     .up_button {

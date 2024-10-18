@@ -4,63 +4,31 @@
 }
 
 @media screen and (max-width: 845px) {
-
-    .big_font {
+    .sentence {
         color: #364A17;
         text-align: center;
         font-family: 'Pretendard';
-        font-size: 22px;
-        font-style: normal;
+        font-size: 25px;
         font-weight: 500;
         line-height: 20px;
         letter-spacing: -0.5px;
-        margin-top: 40px;
-        margin-bottom: 100px;
+        margin-top: 300px;
     }
 
-    .input_idpassword {
+    .tada > img {
+        width: 60px;
+        height: 60px;
+        margin: 23px 10px 0 0;
+        gap: 5px;
+    }
+
+    .tada {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .input_idpassword > p {
-        color: #2C2C2C;
-        font-family: 'Pretendard';
-        font-size: 15px;
-        font-weight: 500;
-        line-height: 20px;
-        letter-spacing: -0.5px;
-        margin: 8px 0;
-    }
-
-    .id {
-        margin-right: 200px !important;
-    }
-
-    .pw {
-        margin-right: 168px !important;
-    }
-
-    .input_id, .input_password {
-        display: flex;
-        width: 315px;
-        height: 45px;
-        padding: 12px 10px;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 10px;
-        border: 1.5px solid #AEAEAE;
-        margin-bottom: 30px;
-    }
-
-    .input_id:focus,
-    .input_password:focus {
-        outline: 1.5px solid #83AC3E !important;
+        justify-content: center;
     }
 
     .two_button {
-        margin-top: 330px;
+        margin-top: 300px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -90,4 +58,5 @@
         border: none;
         outline: none;
     }
+
 }
