@@ -15,6 +15,9 @@ export class Mission {
   @Column({ nullable: true })
   user_id: number;
 
+  @Column()
+  mission: boolean;
+
   @OneToOne(() => User, (user) => user.mission)
   @JoinColumn({ name: 'user_id' })
   user: User;
