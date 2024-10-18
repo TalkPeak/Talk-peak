@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/font/PretendardVariable.ttf') format('truetype');
+}
+
 @media screen and (max-width: 845px) {
     /* 스타일 초기화 */
 * {
@@ -7,7 +12,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Pretendard', sans-serif;
     background-color: #F5F5F5;
     display: flex;
     flex-direction: column;
@@ -42,12 +47,12 @@ body {
 
 /* 정보 박스 스타일 */
 .info-box {
-    background-color: #ECF3D6;
+    background: #E9F4CF;
     padding:20px;
     border-radius: 10px;
     width: 90%;
     max-width: 600px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .info-box table {
@@ -61,13 +66,24 @@ body {
 }
 
 .info-box td{
-    font-family: 'Arial', sans-serif;
-    text-align: left; 
+    text-align: right; 
 }
 
 .info-box th {
     font-weight: bold;
     color: #333;
 }
+
+.babsae {
+    margin-top: 190px;
+    z-index: -1;
+}
+
+.one {
+    position: absolute;
+    top: 60%; /* body의 중앙 위치 */
+    transform: translateY(-100%); /* 중앙에서 위로 이동 */
+}
+
 
 }
