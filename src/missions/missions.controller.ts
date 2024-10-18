@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Post, Get, Body, Param, Put } from '@nestjs/common';
 import { MissionsService } from './missions.service';
 import { CreateMissionDto } from './dto/create-mission.dto';
 import { UpdateMissionDto } from './dto/update-mission.dto';
@@ -7,28 +7,16 @@ import { UpdateMissionDto } from './dto/update-mission.dto';
 export class MissionsController {
   constructor(private readonly missionsService: MissionsService) {}
 
-  @Post()
-  create(@Body() createMissionDto: CreateMissionDto) {
-    return this.missionsService.create(createMissionDto);
+  @Get(':userId')
+  async findOne(@Param('userId') userId: string) {
+    return this.missionsService.findOne(+userId);
   }
 
-  @Get()
-  findAll() {
-    return this.missionsService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.missionsService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateMissionDto: UpdateMissionDto) {
-    return this.missionsService.update(+id, updateMissionDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.missionsService.remove(+id);
+  @Put(':userId')
+  async update(
+    @Param('userId') userId: string,
+    @Body() updateMissionDto: UpdateMissionDto,
+  ) {
+    return this.missionsService.update(+userId, updateMissionDto);
   }
 }
