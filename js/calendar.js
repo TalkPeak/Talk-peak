@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
     weekdays.forEach((day, index) => {
         const dayElement = document.createElement("div");
         dayElement.classList.add("day");
-        if (index === 5 || index === 6) { // 토요일과 일요일을 빨간색으로
+        if (index === 5) { // 토요일은 파란색으로
+            dayElement.classList.add("blue");
+        } else if (index === 6) { // 일요일은 빨간색으로
             dayElement.classList.add("red");
         }
         dayElement.textContent = day;
@@ -37,8 +39,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const dateElement = document.createElement("div");
         dateElement.classList.add("day");
 
-        // 특정 날짜에 빨간색 적용
-        if ([4, 5, 11, 12, 18, 19, 25, 26].includes(i)) {
+        // 특정 날짜에 빨간색 및 파란색 적용
+        if ([4, 11, 18, 25].includes(i)) {
+            dateElement.classList.add("blue");
+        } else if ([5, 12, 19, 26].includes(i)) {
             dateElement.classList.add("red");
         }
 
