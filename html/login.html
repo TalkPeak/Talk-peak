@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,9 @@
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/reset.css">
-    <title>메인 페이지</title>
+    <title>톡피크</title>
 </head>
+
 <body>
     <p class="big_font">로그인 하기</p>
 
@@ -21,9 +23,40 @@
     </section>
 
     <section class="two_button">
-        <a href="/html/index.html">
-            <input type="button" class="up_button" value="로그인 하기">
-        </a>
+        <input type="button" class="up_button" value="로그인 하기">
     </section>
 </body>
+
 </html>
+
+<script>
+    // ID와 비밀번호 입력 필드를 가져오는 함수
+    function getElement(selector) {
+        return document.querySelector(selector).value;  // 입력된 값 가져오기
+    }
+
+    async function login() {
+        const id = getElement('.input_id');  // ID 입력값 가져오기
+        const pw = getElement('.input_password');  // 비밀번호 입력값 가져오기
+
+        const response = await fetch("http://172.16.20.130:4030/users/login", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'  // JSON 형식으로 전송
+            },
+            body: JSON.stringify({
+                email: id,
+                password: pw,
+            }),
+        });
+
+        if (response.ok) {  // 로그인 성공 시
+            window.location.href = "/html";  // 성공 후 이동할 페이지 설정
+        } else {
+            alert("로그인 실패. ID나 비밀번호를 확인하세요.");  // 실패 시 알림
+        }
+    }
+
+    // 로그인 버튼 클릭 시 login 함수 호출
+    document.querySelector('.up_button').addEventListener('click', login);
+</script>
