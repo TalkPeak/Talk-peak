@@ -30,13 +30,17 @@
     }
 
     .two_button {
-        margin-top: 490px;
+        margin-top: 190px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         position: relative;
-        height: 100px; 
+        /* height: 100px;  */
+    }
+
+    .babsae {
+        margin-bottom: 80px;
     }
     
     .up_button,
