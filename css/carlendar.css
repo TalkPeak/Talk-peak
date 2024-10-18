@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/font/PretendardVariable.ttf') format('truetype');
+}
+
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;     
+    font-family: 'Pretendard', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 845px) {
+    .background_img {
+        height: 840px; /* 원하는 높이 설정 */
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: -1;
+      }
+
+      .header_icon {
+        display: flex;
+        justify-content: space-around; /* 공간을 고르게 배분 */
+        position: absolute;
+        top: 3%; 
+        left: 50%;
+        transform: translateX(-50%); /* 중앙 정렬을 위해 추가 */
+        z-index: 2; 
+        width: 100%; /* 부모 요소의 너비를 사용 */
+    }
+
+    #Useranswer {
+        width: 100%;
+    }
+
+    .calendar-container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background: white;
+        padding: 20 px;
+        border-radius: 16px;
+        border: 1px solid #83AC3E;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .title {
+        font-size: 18px;
+        color: #333;
+    }
+    
+    .calendar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 15px; /* 캘린더와 버튼 사이 간격 */
+    }
+    
+    .weekdays, .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+    }
+    
+    
+    
+    .day {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    
+    .day:hover {
+        background-color: #f0f0f0;
+    }
+    
+    .today-writing {
+        z-index: 2;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        bottom: 22%;
+    }
+    
+    .today-writing button {
+        width: 100%;
+        padding: 10px;
+        background-color: #FFEEEE;
+        color: #333;
+        border: none;
+        border-radius: 12px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    h2.title{
+        font-size: 23px;
+        padding: 25px;
+    }
+    .day.red {
+        color: red; /* 빨간색으로 표시할 스타일 */
+    }
+    body {
+        width: 390px;
+        height: 844px;
+    }
+
+    .calendar-container {
+        width: 90%;
+        max-width: 350px;
+        margin-bottom: 20px; /* 캘린더와 버튼 사이 간격 */
+    }
+
+    .today-writing {
+        width: 100%;
+        max-width: 350px;
+        margin-top: 10px;
+        margin-bottom: 60px; /* nav와의 간격 확보 */
+        text-align: center;
+    }
+
+    .today-writing button {
+        width: 100%;
+        padding: 12px;
+        background-color: #FFB7B7;
+        color: #333;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+
+    #modal-title{
+        text-align: left;
+        padding: 10px;
+    }
+    
+    .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        height: 450px;
+        width: 350px;
+        max-width: 90%;
+        text-align: center;
+        position: relative;
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    
+    textarea {
+        height: 270px; 
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #C7E488;
+        border-radius: 5px;
+    }
+    
+    #save-diary {
+        width: 100%;
+        padding: 10px;
+        background-color: #C7E488;
+        color: #333;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    #save-diary:hover {
+        background-color: #6f9232;
+    }
+
+    .day.highlighted {
+        background-color: #FFCFCF; /* 분홍색 배경 */
+    }
+
+}

@@ -6,11 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/css/nav.css">
-    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/reset.css">
-    <title>메인 페이지</title>
+    <link rel="stylesheet" href="/css/carlendar.css">
+
+    <title>Carlendar</title>
 </head>
 <body>
+    <header>
+        <div class="background_img">
+            <svg width="390" height="844" viewBox="0 0 390 734" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="path-1-outside-1_20_1930" maskUnits="userSpaceOnUse" x="-2" y="0" width="394" height="734" fill="black">
+                <rect fill="white" x="-2" width="394" height="734"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M375 2C383.284 2 390 8.71572 390 17V732H196H194.499H0V62H194.499V17C194.499 8.71573 201.214 2 209.499 2H375Z"/>
+                </mask>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M375 2C383.284 2 390 8.71572 390 17V732H196H194.499H0V62H194.499V17C194.499 8.71573 201.214 2 209.499 2H375Z" fill="white"/>
+                <path d="M390 732H391.5V733.5H390V732ZM0 732V733.5H-1.5V732H0ZM0 62H-1.5V60.5H0V62ZM194.499 62H195.999V63.5H194.499V62ZM388.5 17C388.5 9.54414 382.456 3.5 375 3.5V0.5C384.113 0.5 391.5 7.88729 391.5 17H388.5ZM388.5 732V17H391.5V732H388.5ZM196 730.5H390V733.5H196V730.5ZM194.499 730.5H196V733.5H194.499V730.5ZM0 730.5H194.499V733.5H0V730.5ZM1.5 62V732H-1.5V62H1.5ZM194.499 63.5H0V60.5H194.499V63.5ZM195.999 17V62H192.999V17H195.999ZM209.499 3.5C202.043 3.5 195.999 9.54415 195.999 17H192.999C192.999 7.8873 200.386 0.5 209.499 0.5V3.5ZM375 3.5H209.499V0.5H375V3.5Z" fill="#83AC3E" mask="url(#path-1-outside-1_20_1930)"/>
+                </svg>
+                
+        </div>
+        <div class="header_icon">
+            <div>
+                <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.5 0C9.18479 0 6.00537 1.36761 3.66117 3.80198C1.31696 6.23634 0 9.53805 0 12.9808C0 15.055 0.469231 17.0188 1.30513 18.7615C1.43846 19.0411 1.45128 19.4578 1.29872 20.1062C1.21793 20.4337 1.12383 20.7575 1.01667 21.0768L0.978205 21.1913C0.883333 21.4842 0.780769 21.8037 0.703846 22.1006C0.214103 24.0004 1.88846 25.7392 3.71667 25.2306C4.00385 25.1507 4.31026 25.0442 4.59359 24.9457L4.70385 24.9058C5.01127 24.7945 5.32308 24.6967 5.63846 24.6129C6.26282 24.4531 6.6641 24.4664 6.93333 24.6062C8.66234 25.5008 10.5683 25.9649 12.5 25.9615C19.4038 25.9615 25 20.1501 25 12.9808C25 5.81139 19.4038 0 12.5 0Z" fill="#A3CA61"/>
+                </svg>   
+            </div>
+            <div>
+                <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 6.25V3.75H2.5V2.5C2.5 1.83696 2.76339 1.20107 3.23223 0.732233C3.70107 0.263392 4.33696 0 5 0H12.5V8.75L15.625 6.875L18.75 8.75V0H20C21.3125 0 22.5 1.1875 22.5 2.5V22.5C22.5 23.8125 21.3125 25 20 25H5C3.6875 25 2.5 23.8125 2.5 22.5V21.25H0V18.75H2.5V13.75H0V11.25H2.5V6.25H0ZM5 11.25H2.5V13.75H5V11.25ZM5 6.25V3.75H2.5V6.25H5ZM5 21.25V18.75H2.5V21.25H5Z" fill="#C7E488"/>
+                </svg>      
+            </div>
+        </div>
+    </header>
+    <div class="calendar-container">
+        <h2 class="title">October 2024</h2>
+        <div class="calendar" id="calendar">
+            <div class="days" id="days"></div>
+        </div>
+    </div>
+    
+    <div class="today-writing">
+        <button id="write-diary">오늘의 일기 작성하기</button>
+    </div>
     <nav>
         <div class="border_line"></div>
         <div class="nav_three_button">
@@ -26,10 +62,16 @@
             </svg>
         </div>
     </nav>
-    <section class="two_button">
-        <input type="button" class="up_button" value="그래! 오늘의 미션을 알려 줘">
-        <input type="button" class="down_button" value="조금 이따가 알려 줘~">
-    </section>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h3 id="modal-title">일기 작성</h3>
+            <h6 id="modal-title">오늘의 일기를 적어줘!</h6>
+            <textarea id="diary-text" rows="5" placeholder="오늘의 기분은 어땠어? 무슨일 있었어?"></textarea>
+            <button id="save-diary">일기 작성 끝내기</button>
+        </div>
+    </div>
 
+    <script src="/js/calendar.js"></script>
 </body>
 </html>
