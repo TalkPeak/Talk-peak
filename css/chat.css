@@ -5,7 +5,7 @@
 
 @media screen and (max-width: 845px) {
     .background_img {
-        height: 400px; /* 원하는 높이 설정 */
+        height: 150px; /* 원하는 높이 설정 */
         background-size: cover;
         background-position: center;
         position: relative;
@@ -50,6 +50,32 @@
 
     #Submit {
         all: unset; /* 모든 기본 스타일을 초기화 */
+    }
+
+    .profile-container {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    .chat-message.A {
+        padding-left: 10px;
+        text-align: left; /* A 메시지 왼쪽 정렬 */
+        margin: 10px;
+        margin-bottom:40px;
+        
+    }
+    
+    .chat-message.B {
+        margin-bottom: 40px;
+        padding-right: 10px;
+        text-align: right; /* B 메시지 오른쪽 정렬 (선택사항) */
+        margin: 10px 0; /* 메시지 간격 조정 */
+    }
+
+    .chat_massage{
+        border: 2px solid #A3CA61;
+        border-radius: 10px;
     }
 }
 
