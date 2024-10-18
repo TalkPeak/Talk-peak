@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/font/PretendardVariable.ttf') format('truetype');
+}
+
+@media screen and (max-width: 845px) {
+    .header_icon {
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        bottom: 700px;
+    }
+}
+
