@@ -7,12 +7,6 @@ import { User } from './entities/user.entity';
 
 @Injectable()
 export class UsersService {
-  updateUser(arg0: number, updateUserDto: UpdateUserDto) {
-    throw new Error('Method not implemented.');
-  }
-  createUser(createUserDto: CreateUserDto) {
-    throw new Error('Method not implemented.');
-  }
   constructor(
     @InjectRepository(User)
     private usersRepository: Repository<User>,
@@ -21,10 +15,6 @@ export class UsersService {
   async create(createUserDto: CreateUserDto): Promise<User> {
     const user = this.usersRepository.create(createUserDto);
     return this.usersRepository.save(user);
-  }
-
-  async findAll(): Promise<User[]> {
-    return this.usersRepository.find();
   }
 
   async findOne(id: number): Promise<User | undefined> {
@@ -45,5 +35,20 @@ export class UsersService {
 
   async remove(id: number): Promise<void> {
     await this.usersRepository.delete(id);
+  }
+  async createUser(createUserDto: CreateUserDto): Promise<User> {
+    const user = this.usersRepository.create(createUserDto);
+    return this.usersRepository.save(user);
+  }
+  async updateUser(
+    id: number,
+    updateUserDto: UpdateUserDto,
+  ): Promise<User | undefined> {
+    const user = await this.usersRepository.findOneBy({ id });
+    if (!user) {
+      return undefined;
+    }
+    Object.assign(user, updateUserDto);
+    return this.usersRepository.save(user);
   }
 }
