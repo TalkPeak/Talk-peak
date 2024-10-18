@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/font/PretendardVariable.ttf') format('truetype');
+}
+
+@media screen and (max-width: 845px) {
+
+    .border_line {
+        width: 392px;
+        border: 1.5px solid #83AC3E;
+        background: #FFF;
+        position: relative;
+        top: 780px;
+    }
+
+    .nav_three_button {
+        display: flex;
+        height: 100vh;
+        align-items: flex-end;
+        justify-content: space-around;
+        padding-bottom: 18px;
+    }
+
+    body {
+        background-color: #FFFFF5;
+    }
+
+    .two_button {
+        bottom: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100px; 
+    }
+    
+    .up_button,
+    .down_button {
+        width: 315px;
+        height: 50px;
+        padding: 0 50px;
+        color: #484848;
+        text-align: center;
+        margin: 5px 0;
+        border-radius: 10px;
+        line-height: 50px; 
+        font-size: 15px;
+        font-family: 'Pretendard';
+        font-weight: 400;
+        letter-spacing: -0.5px;
+    }
+
+    .up_button {
+        background:#C7E488;
+        border: none;
+        outline: none;
+    }
+    
+    .down_button {
+        border-radius: 10px;
+        border: 2px solid #A3CA61;
+        background: #FFF;
+        outline: none;
+    }
+    
+}
